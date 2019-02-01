@@ -549,8 +549,6 @@ class drinks_screen(Screen):
 
 
 
-
-
 class deserts_screen(Screen):
 
 	food_grid = ObjectProperty()
@@ -578,9 +576,6 @@ class deserts_screen(Screen):
 			self.grid1.add_widget(self.one_food)
 
 		self.food_grid.add_widget(self.grid1)
-
-
-
 
 
 
@@ -726,7 +721,6 @@ class RestApp(App):
 		self.sm.add_widget(self.manage_screen)
 
 		return self.sm
-
 
 
 if __name__ == '__main__':
