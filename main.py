@@ -107,17 +107,9 @@ class Total_Popup(ModalView):
 
 		self.dismiss()
 
-		#self.menu_grid.clear_widgets()
-
-		#self.food_list.clear()
-
 		self.app_inst.manage_screen.add_to_today_earning(self.total_box.text)
 
-		#self.app_inst.menu_screen.build_food_lists()
-
 		self.app_inst.menu_screen.reset_all_food_grid()
-
-		#self.app_inst.menu_screen.toggle_clicked()
 
 		self.popup_status = False
 
@@ -724,8 +716,6 @@ class RestApp(App):
 	screens = ObjectProperty()
 
 	def build(self):
-
-		#Window.size = (320, 600)
 
 		self.sm = ScreenManager()
 	

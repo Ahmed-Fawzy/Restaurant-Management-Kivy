@@ -58,17 +58,13 @@
 	name: 'menu_screen'
 
 	btn: btn
-	
+
 	tbh1: tbh1
 	tbh2: tbh2
 	tbh3: tbh3
 	tbh4: tbh4
 
-	#food_grid: food_grid
-
-
 	header: header
-
 
 	total_btn: total_btn
 
@@ -126,7 +122,6 @@
 		BoxLayout:
 			orientation: 'horizontal'
 			size_hint_y: .1
-#			padding: 2
 			spacing: 2
 
 			ToggleButton:
@@ -171,14 +166,6 @@
 
 
 
-
-#		BoxLayout:
-#			orientation: 'horizontal'
-#			size_hint_y: .8
-
-
-
-
 		BoxLayout:
 			size_hint_y: .7
 			orientation: 'vertical'
@@ -202,13 +189,6 @@
 				size_hint_y: .6
 				id: sm
 
-#			ScrollView:
-#				size_hint_y: .6
-#				size: self.size
-#				id: food_grid
-
-
-
 
 		AnchorLayout:
 			size_hint_y: .15
@@ -228,8 +208,6 @@
 
 <Header_1>:
 	cols: 4
-	#padding: 10
-	#spacing: 2
 
 	lbl1: lbl1
 	lbl2: lbl2
@@ -263,8 +241,6 @@
 
 <Header_2>:
 	cols: 7
-	#padding: 10
-	#spacing: 10
 
 	lbl1: lbl1
 	lbl2: lbl2
@@ -326,8 +302,6 @@
 
 <Header_3>:
 	cols: 10
-	#padding: 10
-	#spacing: 10
 
 	lbl1: lbl1
 	lbl2: lbl2
@@ -710,22 +684,14 @@
 				root.quantity_added_3()
 
 
-
-
-
 <Food_Button>:
 	bold: True
-	#height: '40dp'
-	#size_hint_y: None
-	#text_size: self.size
 	font_size: self.height/2.5
 
 <Title_Label>:
 	font_name: 'fonts/Lemon-R.ttf'
 	color: .2,.2,.2, 1
 	bold: True
-	font_size: self.height/3.
-
 
 
 <Manage_Screen>:
