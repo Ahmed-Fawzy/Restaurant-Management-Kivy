@@ -1,0 +1,919 @@
+
+<kebab_screen>:
+	name: 'kebab_scr'
+	food_grid: food_grid
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		ScrollView:
+			size: self.size
+			id: food_grid
+
+
+
+<pizza_screen>:
+	name: 'pizza_scr'
+	food_grid: food_grid
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		ScrollView:
+			size: self.size
+			id: food_grid
+
+
+
+<drinks_screen>:
+	name: 'drinks_scr'
+	food_grid: food_grid
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		ScrollView:
+			size: self.size
+			id: food_grid
+
+
+
+
+<deserts_screen>:
+	name: 'deserts_scr'
+	food_grid: food_grid
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		ScrollView:
+			size: self.size
+			id: food_grid
+
+
+
+
+<Menu_Screen>:
+
+	name: 'menu_screen'
+
+	btn: btn
+	
+	tbh1: tbh1
+	tbh2: tbh2
+	tbh3: tbh3
+	tbh4: tbh4
+
+	#food_grid: food_grid
+
+
+	header: header
+
+
+	total_btn: total_btn
+
+	sm: sm
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		canvas.before:
+			Color:
+				rgba: 225/255., 225/255., 225/255., 1
+
+			Rectangle:
+				pos: self.pos
+				size: self.size
+
+		BoxLayout:
+			orientation: 'horizontal'
+			size_hint_y: .1
+			padding: 2
+
+			Image:
+				size_hint_x: .15
+				source: 'images/logo.png'
+
+			Label:
+				size_hint_x: .45
+				id: btn
+				text: ''
+				font_name: 'fonts/Lemon-R.ttf'
+				font_size: self.height/2.
+				color: 1, 0, 0, 1
+				text_size: self.size
+				halign: 'left'
+				valign: 'middle'
+
+
+			AnchorLayout:
+				size_hint_x: .4
+				anchor_x: "right"
+				anchor_y: "center"	
+
+				Button:
+					text: root.admin_title
+					font_name: 'fonts/Lemon-R.ttf'
+					size_hint: .3,.9
+					font_size: self.height/2.7
+					bold: True
+					background_normal: 'images/normal_btn.png'
+					on_release:
+						root.go_to_manage_screen()
+
+
+
+		BoxLayout:
+			orientation: 'horizontal'
+			size_hint_y: .1
+#			padding: 2
+			spacing: 2
+
+			ToggleButton:
+				id: tbh1
+				text: ''
+				group: 'accordion'
+				font_name: 'fonts/Lemon-R.ttf'
+				state: 'down'
+				background_normal: 'images/normal_btn.png'
+				on_state:
+					root.toggle_clicked()			
+
+			ToggleButton:
+				id: tbh2
+				text: ''
+				group: 'accordion'
+				font_name: 'fonts/Lemon-R.ttf'
+				background_normal: 'images/normal_btn.png'
+				on_state:
+					root.toggle_clicked()
+
+			ToggleButton:
+				id: tbh3
+				text: ''
+				group: 'accordion'
+				font_name: 'fonts/Lemon-R.ttf'
+				bold: True
+				background_normal: 'images/normal_btn.png'
+				on_state:
+					root.toggle_clicked()
+
+
+
+			ToggleButton:
+				id: tbh4
+				text: ''
+				group: 'accordion'
+				font_name: 'fonts/Lemon-R.ttf'
+				background_normal: 'images/normal_btn.png'
+				on_state:
+					root.toggle_clicked()			
+
+
+
+
+#		BoxLayout:
+#			orientation: 'horizontal'
+#			size_hint_y: .8
+
+
+
+
+		BoxLayout:
+			size_hint_y: .7
+			orientation: 'vertical'
+			canvas.before:
+				Color:
+					rgba: 1, 1, 1, 1
+
+				Rectangle:
+					pos: self.pos
+					size: self.size
+
+
+
+			BoxLayout:
+				id: header
+				size_hint_y: .1
+
+
+
+			ScreenManager:
+				size_hint_y: .6
+				id: sm
+
+#			ScrollView:
+#				size_hint_y: .6
+#				size: self.size
+#				id: food_grid
+
+
+
+
+		AnchorLayout:
+			size_hint_y: .15
+			anchor_x: "center"
+			anchor_y: "center"	
+
+			Button:
+				id: total_btn
+				size_hint: .15, .5
+				font_name: 'fonts/Lemon-R.ttf'
+				font_size: self.height/2.3
+				on_release:
+					root.open_total_pop()
+
+
+
+
+<Header_1>:
+	cols: 4
+	#padding: 10
+	#spacing: 2
+
+	lbl1: lbl1
+	lbl2: lbl2
+	lbl3: lbl3
+
+	Title_Label:
+		id: lbl1
+
+	Title_Label:
+		id: lbl2
+
+	Title_Label:
+		id: lbl3
+		canvas.before:
+			Color:
+				rgba: .9, .9, .9, 1
+			Rectangle:
+				pos: self.pos
+				size: self.size
+
+	Title_Label:
+		text: 'no'
+		color: .2,.2,.2, 1		
+		canvas.before:
+			Color:
+				rgba: .9, .9, .9, 1
+			Rectangle:
+				pos: self.pos
+				size: self.size
+
+
+<Header_2>:
+	cols: 7
+	#padding: 10
+	#spacing: 10
+
+	lbl1: lbl1
+	lbl2: lbl2
+	lbl3: lbl3
+	lbl4: lbl4
+	lbl5: lbl5
+
+
+	Title_Label:
+		id: lbl1
+
+	Title_Label:
+		id: lbl2
+
+	Title_Label:
+		id: lbl3
+
+
+	Label:
+		text: '#'
+		color: .2,.2,.2, 1	
+		canvas.before:
+			Color:
+				rgba: .8, .8, .8, 1
+			Rectangle:
+				pos: self.pos
+				size: self.size
+	
+	Title_Label:
+		id: lbl4
+		canvas.before:
+			Color:
+				rgba: .8, .8, .8, 1
+			Rectangle:
+				pos: self.pos
+				size: self.size
+
+	Label:
+		text: '#'
+		color: .2,.2,.2, 1
+		canvas.before:
+			Color:
+				rgba: .9, .9, .9, 1
+			Rectangle:
+				pos: self.pos
+				size: self.size
+
+
+	Title_Label:
+		id: lbl5
+		canvas.before:
+			Color:
+				rgba: .9, .9, .9, 1
+			Rectangle:
+				pos: self.pos
+				size: self.size
+
+
+
+<Header_3>:
+	cols: 10
+	#padding: 10
+	#spacing: 10
+
+	lbl1: lbl1
+	lbl2: lbl2
+	lbl3: lbl3
+	lbl4: lbl4
+	lbl5: lbl5
+	lbl6: lbl6
+	lbl7: lbl7
+
+
+	Title_Label:
+		id: lbl1
+
+	Title_Label:
+		id: lbl2
+
+
+	Title_Label:
+		id: lbl3
+
+
+	Title_Label:
+		id: lbl4
+
+
+	Label:
+		text: '#'
+		color: .2,.2,.2, 1
+		canvas.before:
+			Color:
+				rgba: .9, .9, .9, 1
+			Rectangle:
+				pos: self.pos
+				size: self.size
+
+
+	Title_Label:
+		id: lbl5
+		canvas.before:
+			Color:
+				rgba: .9, .9, .9, 1
+			Rectangle:
+				pos: self.pos
+				size: self.size
+
+
+
+	Label:
+		text: '#'
+		color: .2,.2,.2, 1		
+		canvas.before:
+			Color:
+				rgba: .8, .8, .8, 1
+			Rectangle:
+				pos: self.pos
+				size: self.size
+
+
+	Title_Label:
+		id: lbl6
+		canvas.before:
+			Color:
+				rgba: .8, .8, .8, 1
+			Rectangle:
+				pos: self.pos
+				size: self.size
+
+	Label:
+		text: '#'
+		color: .2,.2,.2, 1
+		canvas.before:
+			Color:
+				rgba: .9, .9, .9, 1
+			Rectangle:
+				pos: self.pos
+				size: self.size
+
+
+	Title_Label:
+		id: lbl7
+		canvas.before:
+			Color:
+				rgba: .9, .9, .9, 1
+			Rectangle:
+				pos: self.pos
+				size: self.size
+
+
+
+
+
+<Food_BoxLayout_1>:
+	orientation: 'horizontal'
+	size_hint_y: None
+	height: '50dp'
+
+	food_name: food_name
+	check_1: check_1
+	price_1: price_1
+	inp_1: inp_1
+
+
+	Food_Button:
+		id: food_name
+
+
+	Label:
+		id:price_1
+		text: ''
+		color: .2,.2,.2, 1
+		bold: True
+
+
+	CheckBox:
+		id: check_1
+		color: .2,.2,.2, 1
+		canvas.before:
+			Color:
+				rgba: .9, .9, .9, 1
+			Rectangle:
+				pos: self.pos
+				size: self.size
+
+
+	AnchorLayout:
+		anchor_x: "center"
+		anchor_y: "center"	
+		canvas.before:
+			Color:
+				rgba: .9, .9, .9, 1
+			Rectangle:
+				pos: self.pos
+				size: self.size
+
+		TextInput:
+			id: inp_1
+			size_hint_x: .3
+			text: '1'
+			padding_x: (self.width - self._get_text_width(self.text, self.tab_width, self._label_cached) ) / 2
+			padding_y: ( self.height - self.line_height ) / 2
+			on_text:
+				root.quantity_added_1()
+
+
+
+<Food_BoxLayout_2>:
+	orientation: 'horizontal'
+	size_hint_y: None
+	height: '50dp'
+
+	food_name: food_name
+
+	check_1: check_1
+	check_2: check_2
+
+	price_1: price_1
+	price_2: price_2
+
+	inp_1: inp_1
+	inp_2: inp_2
+
+	Food_Button:
+		id: food_name
+
+
+	Label:
+		id: price_1
+		text: ''
+		color: .2,.2,.2, 1
+		bold: True
+
+
+	Label:
+		id: price_2
+		text: ''
+		color: .2,.2,.2, 1
+		bold: True
+
+
+	CheckBox:
+		id: check_1
+		color: .2,.2,.2, 1
+		canvas.before:
+			Color:
+				rgba: .8, .8, .8, 1
+			Rectangle:
+				pos: self.pos
+				size: self.size
+
+
+	AnchorLayout:
+		anchor_x: "center"
+		anchor_y: "center"	
+		canvas.before:
+			Color:
+				rgba: .8, .8, .8, 1
+			Rectangle:
+				pos: self.pos
+				size: self.size
+
+		TextInput:
+			id: inp_1
+			size_hint_x: .5
+			text: '1'
+			padding_x: (self.width - self._get_text_width(self.text, self.tab_width, self._label_cached) ) / 2
+			padding_y: ( self.height - self.line_height ) / 2
+			on_text:
+				root.quantity_added_1()
+
+
+	CheckBox:
+		id: check_2
+		color: .2,.2,.2, 1
+		canvas.before:
+			Color:
+				rgba: .9, .9, .9, 1
+			Rectangle:
+				pos: self.pos
+				size: self.size
+
+
+
+	AnchorLayout:
+		anchor_x: "center"
+		anchor_y: "center"	
+		canvas.before:
+			Color:
+				rgba: .9, .9, .9, 1
+			Rectangle:
+				pos: self.pos
+				size: self.size
+
+		TextInput:
+			id: inp_2
+			size_hint_x: .5
+			text: '1'
+			padding_x: (self.width - self._get_text_width(self.text, self.tab_width, self._label_cached) ) / 2
+			padding_y: ( self.height - self.line_height ) / 2
+			on_text:
+				root.quantity_added_2()
+
+
+
+<Food_BoxLayout_3>:
+	orientation: 'horizontal'
+	size_hint_y: None
+	height: '50dp'
+
+	check_1: check_1
+	check_2: check_2
+	check_3: check_3
+
+	food_name: food_name
+
+	price_1: price_1
+	price_2: price_2
+	price_3: price_3
+
+	inp_1: inp_1
+	inp_2: inp_2
+	inp_3: inp_3
+
+
+	Food_Button:
+		id: food_name
+
+
+	Label:
+		id: price_1
+		text: ''
+		color: .2,.2,.2, 1
+		bold: True
+
+
+	Label:
+		id: price_2
+		text: ''
+		color: .2,.2,.2, 1
+		bold: True
+
+	Label:
+		id: price_3
+		text: ''
+		color: .2,.2,.2, 1
+		bold: True
+
+
+	CheckBox:
+		id: check_1
+		color: .2,.2,.2, 1
+		canvas.before:
+			Color:
+				rgba: .9, .9, .9, 1
+			Rectangle:
+				pos: self.pos
+				size: self.size
+
+
+	AnchorLayout:
+		anchor_x: "center"
+		anchor_y: "center"	
+		canvas.before:
+			Color:
+				rgba: .9, .9, .9, 1
+			Rectangle:
+				pos: self.pos
+				size: self.size
+
+		TextInput:
+			id: inp_1
+			size_hint_x: .5
+			text: '1'
+			padding_x: (self.width - self._get_text_width(self.text, self.tab_width, self._label_cached) ) / 2
+			padding_y: ( self.height - self.line_height ) / 2
+			on_text:
+				root.quantity_added_1()
+
+
+	CheckBox:
+		id: check_2
+		color: .2,.2,.2, 1
+		canvas.before:
+			Color:
+				rgba: .8, .8, .8, 1
+			Rectangle:
+				pos: self.pos
+				size: self.size
+
+
+
+	AnchorLayout:
+		anchor_x: "center"
+		anchor_y: "center"	
+		canvas.before:
+			Color:
+				rgba: .8, .8, .8, 1
+			Rectangle:
+				pos: self.pos
+				size: self.size
+
+		TextInput:
+			id: inp_2
+			size_hint_x: .5
+			text: '1'
+			padding_x: (self.width - self._get_text_width(self.text, self.tab_width, self._label_cached) ) / 2
+			padding_y: ( self.height - self.line_height ) / 2
+			on_text:
+				root.quantity_added_2()
+
+
+	CheckBox:
+		id: check_3
+		color: .2,.2,.2, 1
+		canvas.before:
+			Color:
+				rgba: .9, .9, .9, 1
+			Rectangle:
+				pos: self.pos
+				size: self.size
+
+
+
+	AnchorLayout:
+		anchor_x: "center"
+		anchor_y: "center"	
+		canvas.before:
+			Color:
+				rgba: .9, .9, .9, 1
+			Rectangle:
+				pos: self.pos
+				size: self.size
+
+		TextInput:
+			id: inp_3
+			size_hint_x: .5
+			text: '1'
+			padding_x: (self.width - self._get_text_width(self.text, self.tab_width, self._label_cached) ) / 2
+			padding_y: ( self.height - self.line_height ) / 2
+			on_text:
+				root.quantity_added_3()
+
+
+
+
+
+<Food_Button>:
+	bold: True
+	#height: '40dp'
+	#size_hint_y: None
+	#text_size: self.size
+	font_size: self.height/2.5
+
+<Title_Label>:
+	font_name: 'fonts/Lemon-R.ttf'
+	color: .2,.2,.2, 1
+	bold: True
+	font_size: self.height/3.
+
+
+
+<Manage_Screen>:
+
+	name: 'manage_screen'
+
+	earning_amount: earning_amount
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		canvas.before:
+			Color:
+				rgba: 225/255., 225/255., 225/255., 1
+
+			Rectangle:
+				pos: self.pos
+				size: self.size
+
+
+
+		Label:
+			size_hint_y: .1
+			text: root.manage_title
+			font_name: 'fonts/Lemon-R.ttf'
+			font_size: self.height/2.
+			color: 1, 0, 0, 1
+
+
+		BoxLayout:
+			orientation: 'horizontal'
+			size_hint_y: .1
+			spacing: 10
+			padding: 10
+
+			Label:
+				id: earning_amount
+				font_size: self.height/1.5
+				color: .2, .2, .2, 1
+
+			Label:
+				text: root.today_earning_title
+				font_name: 'fonts/Lemon-R.ttf'
+				font_size: self.height/1.5
+				color: .2, .2, .2, 1
+
+
+		AnchorLayout:
+			size_hint_y: .15
+			anchor_x: "center"
+			anchor_y: "center"	
+
+			Button:
+				size_hint: .3,.7
+				text: root.reset_title
+				font_name: 'fonts/Lemon-R.ttf'
+				font_size: self.height/2.5
+				on_release:
+					root.reset_today_earning()
+
+		Label:
+			size_hint_y: .6
+
+		AnchorLayout:
+			size_hint_y: .15
+			anchor_x: "center"
+			anchor_y: "center"	
+
+			Button:
+				text: root.back_btn_title
+				size_hint: .15, .6
+				font_name: 'fonts/Lemon-R.ttf'
+				font_size: self.height/2.5
+				on_release:
+					root.go_to_menu_screen()
+
+
+
+<Total_Popup>:
+
+	auto_dismiss: False
+
+	size_hint: .5, .8
+
+	menu_grid: menu_grid
+	total_box: total_box
+
+
+	BoxLayout:
+		background_color: (0.7,0.6,0.6,1)
+		padding: 20,20,20,20
+		orientation: 'vertical'
+
+
+		Label:
+			size_hint_y: .1
+			font_size: self.height/1.
+			text: root.title
+			bold: True
+			valign: 'middle'
+			halign: 'center'
+			font_name: 'fonts/Lemon-R.ttf'
+
+
+
+		GridLayout:
+			size_hint_y: .1
+			cols: 4
+			padding: 2
+			spacing: 2
+
+			Title_Label:
+				text: root.lbl1
+				color: .8, .8, .8, 1
+				size_hint_x: .4
+			Title_Label:
+				text: root.lbl2
+				color: .8, .8, .8, 1
+				size_hint_x: .2
+			Title_Label:
+				text: root.lbl3
+				color: .8, .8, .8, 1
+				size_hint_x: .2
+			Title_Label:
+				text: root.lbl4
+				color: .8, .8, .8, 1
+				size_hint_x: .2
+
+
+		ScrollView:
+			size_hint_y: .6
+			size: self.size
+
+			GridLayout:
+				id: menu_grid
+				size_hint_y: None
+				cols: 4
+				padding: 10
+				spacing: 10
+
+
+		BoxLayout:
+			size_hint_y: .1
+			orientation: 'horizontal'
+			spacing: 5
+			padding: 5
+
+			Label:
+				id: total_box
+				text: 'total'
+				bold: True
+				font_size: self.height/1.5
+
+			Label:
+				text: root.total_title
+				font_name: 'fonts/Lemon-R.ttf'
+				font_size: self.height/1.5
+
+
+		BoxLayout:
+			size_hint_y: .1
+			orientation: 'horizontal'
+			spacing: 2
+			padding: 2
+
+			AnchorLayout:
+				anchor_x: "center"
+				anchor_y: "center"	
+
+				Button:
+					size_hint: .5,1
+					text: root.new_order_btn
+					font_name: 'fonts/Lemon-R.ttf'
+					font_size: self.height/2.3
+					on_release:
+						root.new_order_clicked()
+
+			AnchorLayout:
+				anchor_x: "center"
+				anchor_y: "center"	
+
+				Button:
+					size_hint: .5,1
+					text: root.back_btn
+					font_name: 'fonts/Lemon-R.ttf'
+					font_size: self.height/2.3
+					on_release:
+						root.dismiss()
+						root.popup_status = False
+
+
