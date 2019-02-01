@@ -66,9 +66,9 @@ class Total_Popup(ModalView):
 
 		self.menu_grid.clear_widgets()
 
-		for i, n in self.food_list.iteritems() :
+		for i, n in self.food_list.items() :
 
-			for typ, pric in n.iteritems() :
+			for typ, pric in n.items() :
 
 				if typ == 'one':
 					add = ''
